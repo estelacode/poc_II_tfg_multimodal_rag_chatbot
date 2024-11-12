@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "poc-multimod-chatbot-chroma"
+version = "0.1.0"
+description = ""
+authors = ["Estela Madariaga <estelamadariagalasala@gmail.com>"]
+readme = "README.md"
+packages = [{include = "poc_multimod_chatbot_chroma", from = "src"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+chromadb="^0.5.18"
+open-clip-torch = "^2.29.0"
+matplotlib = "^3.9.2"
+llama-index = "^0.11.23"
+llama-index-llms-ollama = "^0.3.6"
+llama-index-multi-modal-llms-ollama = "^0.3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
