@@ -1,3 +1,5 @@
 .env
 multimodal_*
 vectorstore
+datasets_zara
+notebooks/download*
