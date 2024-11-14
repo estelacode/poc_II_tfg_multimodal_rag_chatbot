@@ -4,8 +4,12 @@ from llama_index.core import SimpleDirectoryReader, StorageContext
 from llama_index.embeddings.clip import ClipEmbedding
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.embeddings.cohere import CohereEmbedding
+from llama_index.core import PromptTemplate
+from llama_index.multi_modal_llms.ollama import OllamaMultiModal
+from llama_index.core.response.notebook_utils import display_query_and_multimodal_response
 from dotenv import load_dotenv
 import os 
+import gradio as gr
 
 _ = load_dotenv(".env")
 
@@ -45,6 +49,39 @@ def create_multimodal_index(image_documents, text_documents):
     return index
 
 
+def multimodal_rag(index: MultiModalVectorStoreIndex, llm:str ='llava:13b'):
+
+    # Define Prompt Template
+    prompt_template = (
+    "Images of shoes are provided.\n"
+    "---------------------\n"
+    "{context}\n"
+    "---------------------\n"
+    "If the images provided cannot help in answering the query\n"
+    "then respond that you are unable to answer the query. Otherwise,\n"
+    "using only the context provided, and not prior knowledge,\n"
+    "provide an answer to the query."
+    "Query: {query}\n"
+    "Answer: "
+    )
+
+    prompt = PromptTemplate(prompt_template)
+
+    # Instantiate the Ollama MultiModal LLM
+    mm_model = OllamaMultiModal(model=llm, request_timeout=60.0)
+
+    # Define rag query engine (Motor de Búsqueda)
+    rag_engine = index.as_query_engine(
+    llm = mm_model,
+    text_qa_template = prompt
+    )
+
+    # Retrieve settings. Finde the most relevant document
+    rag_engine.retriever.image_similarity_top_k = 1
+
+    return rag_engine
+
+
 def ingestion():
 
     # Load the context images and text
@@ -53,10 +90,27 @@ def ingestion():
     # Create index
     index = create_multimodal_index(image_documents, text_documents)
 
+    return index
 
 
+def rag_respond(query):
+    global index
+    global rag_engine
+    response = rag_engine.query(query)
+    return  gr.Image(response.metadata['image_nodes'][0].metadata['file_path']), response.response
+
+def interface_chatbot():
+    demo = gr.Interface(
+    fn=rag_respond, 
+    title="Multimodal Chatbot",
+    inputs=[gr.Textbox()],   
+    outputs=[gr.Image(), gr.Textbox()])
+    demo.launch()
 
 
 if __name__ == "__main__":
    print('Hello World')
+   index = ingestion()
+   rag_engine = multimodal_rag(index)
+   interface_chatbot()
    
