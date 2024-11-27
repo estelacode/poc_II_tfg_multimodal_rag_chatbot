@@ -111,6 +111,7 @@ def interface_chatbot():
 if __name__ == "__main__":
    print('Hello World')
    index = ingestion()
-   rag_engine = multimodal_rag(index)
+   rag_engine = multimodal_rag(index, llm='llama3.2-vision:11b')
    interface_chatbot()
+   
    
