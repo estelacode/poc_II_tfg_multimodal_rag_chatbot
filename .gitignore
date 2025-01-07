@@ -1,5 +1,5 @@
 .env
-multimodal_*
+#multimodal_*
 vectorstore
 datasets_zara
 notebooks/download*
