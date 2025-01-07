@@ -100,7 +100,7 @@ def rag_respond(query):
 def interface_chatbot():
     demo = gr.Interface(
     fn=rag_respond, 
-    title="Multimodal Chatbot",
+    title="Multimodal Search Chatbot with Chroma and llamaIndex",
     inputs=[gr.Textbox()],   
     outputs=[gr.Image(), gr.Textbox()])
     demo.launch()
