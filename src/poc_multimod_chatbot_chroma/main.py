@@ -11,18 +11,17 @@ from dotenv import load_dotenv
 import os 
 import gradio as gr
 
-_ = load_dotenv(".env")
-
+_ = load_dotenv()
 
 def load_documents():
     """Load the context images and text into ImageDocument and Documents"""
     # context images
-    image_path = "../../datasets_chatbot/images"
+    image_path = "datasets_chatbot/images"
     image_documents = SimpleDirectoryReader(image_path).load_data()
     
 
     # context text
-    text_path = "../../datasets_chatbot/descriptions"
+    text_path = "datasets_chatbot/descriptions"
     text_documents = SimpleDirectoryReader(text_path).load_data()
 
     return image_documents, text_documents
@@ -102,14 +101,13 @@ def rag_respond(query):
 def interface_chatbot():
     demo = gr.Interface(
     fn=rag_respond, 
-    title="Multimodal Chatbot",
+    title="Chatbot RAG Multimodal",
     inputs=[gr.Textbox()],   
     outputs=[gr.Image(), gr.Textbox()])
     demo.launch()
 
 
 if __name__ == "__main__":
-   print('Hello World')
    index = ingestion()
    rag_engine = multimodal_rag(index, llm='llama3.2-vision:11b')
    interface_chatbot()

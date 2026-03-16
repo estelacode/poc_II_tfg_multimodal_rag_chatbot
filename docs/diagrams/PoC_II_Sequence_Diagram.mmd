@@ -1,0 +1,27 @@
+---
+config:
+  theme: neutral
+  look: neo
+---
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant VectorStore
+    participant LLM
+
+    Note over Backend,VectorStore: Data Ingestion Phase
+    Backend->>VectorStore: Store embeddings (Cohere for text + CLIP for images)
+
+    Note over User,LLM: Query Phase
+    User->>Frontend: Submit query (text or image)
+    Frontend->>Backend: Send user query
+
+    Backend->>VectorStore: Semantic search (MultiModalVectorStoreIndex)
+    VectorStore-->>Backend: Return most relevant documents/images
+
+    Backend->>LLM: Query + retrieved context(Ollama Multimodal LLM)
+    LLM-->>Backend: Generated multimodal response
+
+    Backend-->>Frontend: Send response (text + image)
+    Frontend-->>User: Display response
