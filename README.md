@@ -5,7 +5,8 @@
 ## Overview 
 A multimodal RAG (Retrieval-Augmented Generation) chatbot that processes text queries and returns responses combining text and images. The system retrieves semantically relevant visual content from a multimodal vector store built from a custom dataset of 3D footwear images. Image and text embeddings are generated using OpenCLIP and Cohere, while multimodal reasoning is performed using LLaVA 1.6 and Llama 3.2 Vision. The application is implemented with LlamaIndex and a Gradio-based web interface.
 ## Demo
-![Demo_PoC_II_Multimodal RAG Chatbot 1](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/demo_interface/demo12_llama_3_2_vision_11B.jpg)![Demo_PoC_II_Multimodal RAG Chatbot 2](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/demo_interface/demo13_llama_3_2_vision_11B.jpg)
+![Demo_PoC_II_Multimodal RAG Chatbot 1](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/demo_interface/demo12_llama_3_2_vision_11B.jpg)
+![Demo_PoC_II_Multimodal RAG Chatbot 2](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/demo_interface/demo14_llama_3_2_vision_11B.jpg)
 
 ## Features
 - Multimodal chatbot: text input with text + image output
@@ -39,28 +40,28 @@ High-level structure of the application:
 `Backend`
 
 ![Python](https://img.shields.io/badge/Python-black?style=for-the-badge&logo=python&logoColor=white)
-![3.12.9](https://img.shields.io/badge/3.12-9370DB?style=for-the-badge&logoColor=white)
+![3.12.9](https://img.shields.io/badge/3.12-CE6ACC?style=for-the-badge&logoColor=white)
 ![LlamaIndex](https://img.shields.io/badge/LlamaIndex-black?style=for-the-badge&logo=llamaindex&logoColor=white)
-![0.11.23](https://img.shields.io/badge/0.11.23-9370DB?style=for-the-badge&logoColor=white)
+![0.11.23](https://img.shields.io/badge/0.11.23-CE6ACC?style=for-the-badge&logoColor=white)
 
 
 `Multimodal / Embeddings`
 
 ![CLIP](https://img.shields.io/badge/CLIP-black?style=for-the-badge&logo=openai&logoColor=white)
-![open--clip](https://img.shields.io/badge/open--clip-9370DB?style=for-the-badge&logoColor=white)
+![open--clip](https://img.shields.io/badge/open--clip-CE6ACC?style=for-the-badge&logoColor=white)
 ![Cohere-Embeddings](https://img.shields.io/badge/Cohere--Embeddings-black?style=for-the-badge&logo=cohere&logoColor=white)
-![embed-multilingual-v3.0](https://img.shields.io/badge/embed--multilingual--v3.0-9370DB?style=for-the-badge&logoColor=white)
+![embed-multilingual-v3.0](https://img.shields.io/badge/embed--multilingual--v3.0-CE6ACC?style=for-the-badge&logoColor=white)
 
 `Vector Database`
 
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-black?style=for-the-badge&logoColor=white)
-![0.5.18](https://img.shields.io/badge/0.5.18-9370DB?style=for-the-badge&logoColor=white)
+![0.5.18](https://img.shields.io/badge/0.5.18-CE6ACC?style=for-the-badge&logoColor=white)
 
 `LLM`
 
 ![Ollama](https://img.shields.io/badge/Ollama-black?style=for-the-badge&logo=ollama&logoColor=white)
-![LLaVA-13B](https://img.shields.io/badge/llava:13b-9370DB?style=for-the-badge&logoColor=white)
-![Llama3.2-Vision](https://img.shields.io/badge/llama3.2--vision:11b-9370DB?style=for-the-badge&logoColor=white)
+![LLaVA-13B](https://img.shields.io/badge/llava:13b-CE6ACC?style=for-the-badge&logoColor=white)
+![Llama3.2-Vision](https://img.shields.io/badge/llama3.2--vision:11b-CE6ACC?style=for-the-badge&logoColor=white)
 
 
 `Frontend`
@@ -70,7 +71,7 @@ High-level structure of the application:
 `Infrastructure | Dev Tools`
 
 ![Poetry](https://img.shields.io/badge/Poetry-black?style=for-the-badge&logo=python&logoColor=white)
-![Dependency-Management](https://img.shields.io/badge/Dependency--Management-9370DB?style=for-the-badge&logoColor=white)
+![Dependency-Management](https://img.shields.io/badge/Dependency--Management-CE6ACC?style=for-the-badge&logoColor=white)
 
 ## Setup
 
