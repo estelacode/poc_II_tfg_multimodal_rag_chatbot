@@ -5,7 +5,7 @@
 ## Overview 
 A multimodal RAG (Retrieval-Augmented Generation) chatbot that processes text queries and returns responses combining text and images. The system retrieves semantically relevant visual content from a multimodal vector store built from a custom dataset of 3D footwear images. Image and text embeddings are generated using OpenCLIP and Cohere, while multimodal reasoning is performed using LLaVA 1.6 and Llama 3.2 Vision. The application is implemented with LlamaIndex and a Gradio-based web interface.
 ## Demo
-![Demo_PoC_II_Multimodal RAG Chatbot](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/demo_interface/demo6_llama_3_2_vision_11B.jpg)
+![Demo_PoC_II_Multimodal RAG Chatbot 1](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/demo_interface/demo12_llama_3_2_vision_11B.jpg)![Demo_PoC_II_Multimodal RAG Chatbot 2](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/demo_interface/demo13_llama_3_2_vision_11B.jpg)
 
 ## Features
 - Multimodal chatbot: text input with text + image output
