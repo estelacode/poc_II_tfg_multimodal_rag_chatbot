@@ -5,12 +5,16 @@
 ## Overview 
 
 ## Demo
+![Demo_PoC_II_Multimodal RAG Chatbot]([https://github.com/estelacode/poc_tfg_chatbot_texto/blob/master/demo/Demo_0_PoC_I_Chatbot_Rag_Unimodal.jpg](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/demo_interface/demo6_llama_3_2_vision_11B.jpg))
 
 ## Features
 
 ## Architecture
+High-level structure of the application:
+![PoC_II_High_level_Architecture_Diagram](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/docs/diagrams/Poc_II_High_Level_Architecture_Diagram.jpg)
 
 ### `Sequence Diagram`
+![PoC_II_Sequence_Diagram](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/docs/diagrams/PoC_II_Sequence_Diagram.png)
 
 #### Sequence Flow:
 
