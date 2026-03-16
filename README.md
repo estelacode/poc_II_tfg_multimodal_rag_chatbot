@@ -3,11 +3,19 @@
 ## Poc II: Multimodal RAG Chatbot
 
 ## Overview 
-
+A multimodal RAG (Retrieval-Augmented Generation) chatbot that processes text queries and returns responses combining text and images. The system retrieves semantically relevant visual content from a multimodal vector store built from a custom dataset of 3D footwear images. Image and text embeddings are generated using OpenCLIP and Cohere, while multimodal reasoning is performed using LLaVA 1.6 and Llama 3.2 Vision. The application is implemented with LlamaIndex and a Gradio-based web interface.
 ## Demo
 ![Demo_PoC_II_Multimodal RAG Chatbot]([https://github.com/estelacode/poc_tfg_chatbot_texto/blob/master/demo/Demo_0_PoC_I_Chatbot_Rag_Unimodal.jpg](https://github.com/estelacode/poc_multimod_chatbot_chroma/blob/master/demo_interface/demo6_llama_3_2_vision_11B.jpg))
 
 ## Features
+- Multimodal chatbot: text input with text + image output
+- Multimodal RAG architecture with unified text–image embeddings
+- Semantic retrieval of images from text queries
+- MultiModalVectorStoreIndex for multimodal vector storage
+- Image embeddings using OpenCLIP
+- Text embeddings using Cohere embed-multilingual-v3.0
+- Large Multimodal Models: LLaVA 1.6 and Llama 3.2 Vision
+- Interactive web UI built with Gradio
 
 ## Architecture
 High-level structure of the application:
@@ -95,6 +103,7 @@ poetry env info
 poetry run python src/poc_multimod_chatbot_chroma/main.py
 ```
 ## Project Structure
+```bash
 POC_MULTIMOD_CHATBOT_CHROMA/
 ├── data/                     # Data files
 ├── datasets_chatbot/         # Chatbot datasets
@@ -108,8 +117,17 @@ POC_MULTIMOD_CHATBOT_CHROMA/
 ├── poetry.lock               # Poetry dependency lock file
 ├── pyproject.toml            # Poetry configuration and dependencies
 └── README.md                 # Project README file
-
+```
 ## Roadmap
+- Support multimodal queries (text + image input)
+- Expand dataset with more product images and descriptions
+- Improve retrieval accuracy with alternative multimodal embeddings
+- Implement reranking techniques for image retrieval
+- Add structured metadata extraction (brand, color, materials)
+- Apply prompt engineering techniques to improve response quality
+- Introduce evaluation methods and metrics for multimodal retrieval and generation
+- Replace in-memory vector store with scalable vector databases
+- Deploy the application as a cloud service
 
 ## References
 - [Poetry Documentation](https://python-poetry.org/docs/)
