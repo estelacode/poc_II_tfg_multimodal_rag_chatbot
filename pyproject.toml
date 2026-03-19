@@ -2,7 +2,7 @@
 name = "poc-multimod-chatbot-chroma"
 version = "0.1.0"
 description = ""
-authors = ["Estela Madariaga <estelamadariagalasala@gmail.com>"]
+authors = ["Estela Madariaga"]
 readme = "README.md"
 packages = [{include = "poc_multimod_chatbot_chroma", from = "src"}]
 
