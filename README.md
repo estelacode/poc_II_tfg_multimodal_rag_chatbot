@@ -105,7 +105,7 @@ poetry run python src/poc_multimod_chatbot_chroma/main.py
 ```
 ## Project Structure
 ```bash
-POC_MULTIMOD_CHATBOT_CHROMA/
+poc_II_tfg_multimodal_rag_chatbot/
 ├── data/                     # Data files
 ├── datasets_chatbot/         # Chatbot datasets
 ├── demo_interface/           # Demo interface or media
