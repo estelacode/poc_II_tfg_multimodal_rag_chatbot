@@ -82,8 +82,8 @@ High-level structure of the application:
 poetry --version
 
 # 2. Clone the repository
-git clone https://github.com/estelacode/poc_tfg_chatbot_texto.git
-cd poc_multimod_chatbot_chroma
+git clone https://github.com/estelacode/poc_II_tfg_multimodal_rag_chatbot
+cd poc_II_tfg_multimodal_rag_chatbot
 
 # 3. Select the Python interpreter for this project
 poetry env use /full/path/to/python
