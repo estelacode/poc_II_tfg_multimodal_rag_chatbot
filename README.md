@@ -82,7 +82,7 @@ High-level structure of the application:
 poetry --version
 
 # 2. Clone the repository
-git clone https://github.com/estelacode/poc_II_tfg_multimodal_rag_chatbot
+git clone https://github.com/estelacode/poc_II_tfg_multimodal_rag_chatbot.git
 cd poc_II_tfg_multimodal_rag_chatbot
 
 # 3. Select the Python interpreter for this project
